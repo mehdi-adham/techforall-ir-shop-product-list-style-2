@@ -1,0 +1,133 @@
+@font-face {
+  font-family: sahel;
+  src: url("fonts/sahel/Sahel.eot");
+  src: url("fonts/sahel/Sahel.eot?#iefix") format("FontName-opentype"),
+    url("fonts/sahel/Sahel.woff") format("woff"),
+    url("fonts/sahel/Sahel.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Sahel-FD;
+  src: url(fonts/sahel/FD/Sahel-FD.woff);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --card-radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sahel, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  direction: rtl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+/* Start style */
+.main-container {
+  padding: 1.5rem 6px;
+}
+.main-container h1 {
+  padding: 6px;
+  margin: 6px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 6px;
+  padding: 6px;
+}
+.product-box {
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  border-radius: var(--card-radius);
+  color: hsl(250, 15%, 35%);
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease-in-out;
+}
+.product-box:hover {
+  border: 1px solid #808080;
+}
+.product-img {
+  overflow: hidden;
+}
+.product-img a {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+.product-img img {
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+.product-img a:hover img {
+  transform: scale(1.1);
+}
+
+.product-title h2 {
+  font-size: 1.2em;
+}
+.persian-digit {
+  font-family: Sahel-FD;
+}
+.product-info {
+  padding: 12px;
+  border-top: 1px solid #e6e6e6;
+}
+/*
+  .max-line-title {
+    overflow: hidden;
+    white-space: normal;
+    height: 80px;
+    text-overflow: -o-ellipsis-lastline;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+  }*/
+
+@media screen and (max-width: 500px) {
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .product-box {
+    grid-template-rows: 1fr 2.5fr 0.5fr;
+  }
+}
+@media screen and (max-width: 950px) {
+  .main-container {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 990px) {
+  .main-container {
+    max-width: 1024px;
+    min-width: 990px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main-container {
+    max-width: 1300px;
+    min-width: 1200px;
+  }
+}
