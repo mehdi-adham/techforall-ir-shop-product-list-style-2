@@ -124,24 +124,29 @@ img {
 
 @media screen and (max-width: 500px) {
   .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
   .product-box {
+    min-height: 250px;
+  }
+  .product-img {
+    height: 160px;
   }
 }
 @media screen and (max-width: 950px) {
-  .main-container {
+  .product-list {
     width: 100%;
   }
 }
 @media screen and (min-width: 990px) {
-  .main-container {
+  .product-list {
     max-width: 1024px;
-    min-width: 999px;
+    min-width: 990px;
   }
 }
-@media screen and (min-width: 1256px) {
-  .main-container {
-    max-width: 1360px;
-    min-width: 1350px;
+@media screen and (min-width: 1200px) {
+  .product-list {
+    max-width: 1300px;
+    min-width: 1200px;
   }
 }
