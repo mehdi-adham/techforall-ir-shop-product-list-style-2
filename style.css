@@ -16,7 +16,7 @@
   font-display: swap;
 }
 :root {
-  --card-radius: 8px;
+  --card-radius: 0;
 }
 
 * {
@@ -34,15 +34,15 @@ body {
   align-items: center;
   background-color: #f9f9f9;
 }
-a {
+.product-box a {
   text-decoration: none;
   color: unset;
   transition: 0.3s ease-in-out;
 }
-a:hover {
+.product-box a:hover {
   color: #428bca;
 }
-img {
+.product-box img {
   width: 100%;
   display: block;
 }
@@ -57,10 +57,12 @@ img {
   margin: 6px;
   border-bottom: 1px solid #e6e6e6;
 }
+
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 12px;
+  grid-gap: 10px;
+  row-gap: 24px;
   padding: 12px;
 }
 .product-box {
