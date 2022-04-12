@@ -34,6 +34,10 @@ body {
   align-items: center;
   background-color: #f9f9f9;
 }
+a {
+  text-decoration: none;
+}
+
 .product-box a {
   text-decoration: none;
   color: unset;
@@ -122,6 +126,22 @@ body {
   color: #30a662;
   margin: 0;
   padding: 0 12px;
+}
+.pl-header {
+  margin: 6px;
+  padding: 6px;
+}
+.pl-header,
+.sort {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+}
+.sort a {
+  color: unset;
+}
+.sort a.active {
+  color: #35bff0;
 }
 
 @media screen and (max-width: 500px) {
