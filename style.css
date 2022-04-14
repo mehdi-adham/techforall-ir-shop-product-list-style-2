@@ -127,15 +127,23 @@ a {
   margin: 0;
   padding: 0 12px;
 }
-.pl-header {
-  margin: 6px;
-  padding: 6px;
+/* ########################### */
+.store-container {
+  display: grid;
+  grid-template-areas:
+    "sside sort sort sort sort"
+    "sside smain smain smain smain";
+  grid-template-columns: minmax(200px, 22%) 1fr;
+  gap: 6px;
 }
-.pl-header,
 .sort {
+  padding: 12px;
+  padding-bottom: 0;
   display: flex;
   column-gap: 15px;
   align-items: center;
+  grid-area: sort;
+  /*background-color: #428bca;*/
 }
 .sort a {
   color: unset;
@@ -143,28 +151,24 @@ a {
 .sort a.active {
   color: #35bff0;
 }
-.store-container{
-  display : grid;
-  grid-template-areas: "sside smain smain smain smain ";
-  grid-template-columns: minmax(200px,22%) 1fr;
-  gap: 6px;
-}
-.store-main{
+
+.product-list {
   grid-area: smain;
   /*background-color: #30a662;*/
 }
-.store-side{
+.store-side {
   grid-area: sside;
- /* background-color: #35bff0;*/
+  /*background-color: #35bff0;*/
   padding: 12px;
 }
-.store-side div{
+.store-side div {
   background-color: #fff;
   padding: 12px;
   margin: 12px 0;
-  border-radius:6px;
+  border-radius: 6px;
 }
 
+/* Device View */ 
 @media screen and (max-width: 500px) {
   .product-list {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -177,30 +181,49 @@ a {
   }
 }
 @media screen and (max-width: 950px) {
-  /*.product-list {
-    width: 100%;
-  }*/
-  .main-container{
+  .main-container {
     width: 100%;
   }
 }
-@media screen and (min-width: 990px) {
-  /*.product-list {
-    max-width: 1024px;
-    min-width: 990px;
-  }*/
-  .main-container{
-    max-width: 1024px;
-    min-width: 990px;
+@media screen and (max-width: 1024px) {
+  .store-container {
+    display: grid;
+    grid-template-areas:
+    "sort sort sort sort sort"
+    "smain smain smain smain smain";
+    grid-template-columns: minmax(200px, 22%) 0;
+    gap: 0;
+  }
+  .store-side {
+    display: none;
   }
 }
+
+/*  1024x768  */
+@media screen and (min-width: 1000px) {
+  .main-container {
+    max-width: 1000px;
+    min-width: 1000px;
+  }
+}
+/*  1280x768 | 1256x768*/
 @media screen and (min-width: 1200px) {
-  /*.product-list {
-    max-width: 1300px;
+  .main-container {
+    max-width: 1200px;
     min-width: 1200px;
-  }*/
-  .main-container{
-    max-width: 1360px;
+  }
+}
+/*  1366x768  */
+@media screen and (min-width: 1300px) {
+  .main-container {
+    max-width: 1300px;
     min-width: 1300px;
+  }
+}
+/*  1420x768  */
+@media screen and (min-width: 1400px) {
+  .main-container {
+    max-width: 1400px;
+    min-width: 1400px;
   }
 }
